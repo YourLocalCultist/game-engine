@@ -7,24 +7,31 @@
 
 1617084851 source:/home/nathan/dev/GameEngine/game.c
 
-1617089790 source:/home/nathan/dev/GameEngine/main.cpp
+1617094295 source:/home/nathan/dev/GameEngine/main.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/glut.h>
 	<stdio.h>
 	"game.cpp"
 
-1617093048 source:/home/nathan/dev/GameEngine/game.cpp
+1617097194 source:/home/nathan/dev/GameEngine/game.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<GL/gl.h>
 	<SDL2/SDL.h>
 
-1617093198 /home/nathan/dev/GameEngine/game.cpp
+1617097357 /home/nathan/dev/GameEngine/game.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<GL/gl.h>
 	<SDL2/SDL.h>
+	"entity.cpp"
+
+1617097338 source:/home/nathan/dev/GameEngine/entity.cpp
+	<GL/gl.h>
+
+1617097338 /home/nathan/dev/GameEngine/entity.cpp
+	<GL/gl.h>
 

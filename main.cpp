@@ -35,17 +35,12 @@ int main(int argc, char**argv)
     glutMainLoop();
 }
 
-void gameLoop() //Main game loop, i think
+void gameLoop() //Main game loop
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
 
     game.update();
-    //draw
-    /*glPointSize(10);
-    glBegin(GL_POINTS);
-    glVertex2i(5,5);
-    glEnd();*/
 
     glutSwapBuffers();
 }
