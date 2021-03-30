@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1617084997 source:/home/nathan/dev/GameEngine/main.c
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<stdio.h>
+
+1617084851 source:/home/nathan/dev/GameEngine/game.c
+
+1617089790 source:/home/nathan/dev/GameEngine/main.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<stdio.h>
+	"game.cpp"
+
+1617093048 source:/home/nathan/dev/GameEngine/game.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<GL/gl.h>
+	<SDL2/SDL.h>
+
+1617093198 /home/nathan/dev/GameEngine/game.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<GL/gl.h>
+	<SDL2/SDL.h>
+
