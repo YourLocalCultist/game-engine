@@ -18,7 +18,7 @@ int main(int argc, char**argv)
 {
     printf("Hello World!\n\n");
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 
     //glutInitWindowPosition(300, 300);
     glutInitWindowSize(480, 300);
@@ -50,7 +50,7 @@ void reshape(int w, int h)//Resize window handler
     glViewport(0,0,w,h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(0,w/4,0,w/4);
+    gluOrtho2D(0,w/4,0,h/4);
     glMatrixMode(GL_MODELVIEW);
 
 }
