@@ -47,10 +47,13 @@ void gameLoop() //Main game loop
 
 void reshape(int w, int h)//Resize window handler
 {
+    float height = 270;
+    float width = w*(height/h);
+
     glViewport(0,0,w,h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(0,w/4,0,h/4);
+    gluOrtho2D(0,width,0,height);
     glMatrixMode(GL_MODELVIEW);
 
 }
