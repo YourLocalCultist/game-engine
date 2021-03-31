@@ -1,13 +1,8 @@
 #include <GL/gl.h>
 #include <stb_image.h>
+#include <texture.h>
 
-class Texture
-{
-    private:
-    GLuint tex;
-
-    public:
-    void init(char const* name, int width, int height)
+    void Texture::init(char const* name, int width, int height)
     {
         int m_Width = width;
         int m_Height = height;
@@ -25,15 +20,14 @@ class Texture
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    void bind()
+    void Texture::bind()
     {
         glBindTexture(GL_TEXTURE_2D, tex);
         glEnable(GL_TEXTURE_2D);
     }
 
-    void unbind()
+    void Texture::unbind()
     {
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
     }
-};

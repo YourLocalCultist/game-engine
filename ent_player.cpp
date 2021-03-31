@@ -1,29 +1,18 @@
-#include <GL/gl.h>
+#include "entity.cpp"
 #include "texture.h"
-#include <stb_image.h>
 
-class Entity
+class EntPlayer: public Entity
 {
     private:
-    int x;
-    int y;
-    int width;
-    int height;
-    int xOrigin;
-    int yOrigin;
 
-    //GLuint tex;
     Texture tex;
 
     public:
     void init(int xx, int yy)
     {
-        x = xx;
-        y = yy;
-        width = 16;
-        height = 32;
-        xOrigin = 8;
-        yOrigin = 16;
+        setXY(xx,yy);
+        setWidthHeight(16, 32);
+        setOrigin(8, 32);
 
         tex.init("textures/bearsmall.png", 64, 64);
     }
@@ -39,7 +28,7 @@ class Entity
     void draw()
     {
         //glColor3f(1,0,0);
-        tex.bind();
+        /*tex.bind();
         glBegin(GL_QUADS);
 
         glVertex2i(x+width-xOrigin,y+height-yOrigin);
@@ -52,47 +41,8 @@ class Entity
         glTexCoord2i(1, 0);
         glEnd();
 
-        tex.unbind();
+        tex.unbind();*/
 
         //glColor3f(1,1,1);
     }
-
-    void setXY(int xx, int yy)
-    {
-        x = xx;
-        y = yy;
-    }
-
-    int getX()
-    {
-        return x;
-    }
-
-    int getY()
-    {
-        return y;
-    }
-
-    void setWidthHeight(int w, int h)
-    {
-        width = w;
-        height = h;
-    }
-
-    int getWidth()
-    {
-        return width;
-    }
-
-    int getHeight()
-    {
-        return height;
-    }
-
-    void setOrigin(int xx, int yy)
-    {
-        xOrigin = xx;
-        yOrigin = yy;
-    }
-
 };

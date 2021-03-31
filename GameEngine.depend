@@ -14,7 +14,7 @@
 	<stdio.h>
 	"game.cpp"
 
-1617151002 source:/home/nathan/dev/GameEngine/game.cpp
+1617151307 source:/home/nathan/dev/GameEngine/game.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -22,7 +22,7 @@
 	<SDL2/SDL.h>
 	"entity.cpp"
 
-1617151249 /home/nathan/dev/GameEngine/game.cpp
+1617151307 /home/nathan/dev/GameEngine/game.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -30,14 +30,13 @@
 	<SDL2/SDL.h>
 	"entity.cpp"
 
-1617151143 source:/home/nathan/dev/GameEngine/entity.cpp
+1617157223 source:/home/nathan/dev/GameEngine/entity.cpp
 	<GL/gl.h>
-	"texture.cpp"
 	<stb_image.h>
 
-1617151143 /home/nathan/dev/GameEngine/entity.cpp
+1617157493 /home/nathan/dev/GameEngine/entity.cpp
 	<GL/gl.h>
-	"texture.cpp"
+	"texture.h"
 	<stb_image.h>
 
 1617100067 /home/nathan/dev/GameEngine/stb_image.h
@@ -60,12 +59,14 @@
 1617100557 source:/home/nathan/dev/GameEngine/stb_image.cpp
 	"stb_image.h"
 
-1617101523 /home/nathan/dev/GameEngine/texture.h
-	<string>
-
-1617148044 source:/home/nathan/dev/GameEngine/texture.cpp
+1617157470 /home/nathan/dev/GameEngine/texture.h
 	<GL/gl.h>
 	<stb_image.h>
+
+1617157335 source:/home/nathan/dev/GameEngine/texture.cpp
+	<GL/gl.h>
+	<stb_image.h>
+	<texture.h>
 
 1617100067 /home/nathan/dev/GameEngine//stb_image.h
 	"stb_image.h"
@@ -84,7 +85,16 @@
 	<intrin.h>
 	<arm_neon.h>
 
-1617148044 /home/nathan/dev/GameEngine/texture.cpp
+1617157086 /home/nathan/dev/GameEngine/texture.cpp
+	<GL/gl.h>
+	<stb_image.h>
+	<texture.h>
+
+1617157195 source:/home/nathan/dev/GameEngine/ent_player.cpp
+	"entity.cpp"
+	"texture.h"
+
+1617157470 /home/nathan/dev/GameEngine//texture.h
 	<GL/gl.h>
 	<stb_image.h>
 
