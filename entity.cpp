@@ -30,7 +30,7 @@ class Entity
 
     void update(bool controller[])
     {
-        int xd = (int)controller[0] + -1*(int)controller[1];
+        int xd = (int)controller[1] + -1*(int)controller[3];
         x += xd;
     }
 

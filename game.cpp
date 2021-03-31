@@ -9,12 +9,9 @@ class Game
 {
     private:
 
-    //int x = 2;
-    //int y = 2;
-
     SDL_Event event;
     SDL_Joystick *joystick;
-    #define BUTTONNUM 16
+    #define BUTTONNUM 20
     bool controller[BUTTONNUM];
 
     Entity player;
@@ -33,24 +30,6 @@ class Game
 
         player.update(controller);
         player.draw();
-
-        /*x = int(rand() % 8);
-        y = int(rand() % 8);
-
-        glColor3f(1,1,1);
-        glPointSize(10);
-        glBegin(GL_POINTS);
-        glVertex2i(x,y);
-        glEnd();
-
-        glColor3f(1,0,0);
-        glBegin(GL_QUADS);
-        glVertex2i(4,4);
-        glVertex2i(0,4);
-        glVertex2i(0,0);
-        glVertex2i(4,0);
-        glEnd();*/
-
 
     }
 
@@ -87,29 +66,29 @@ class Game
         {
             switch(event.type)
             {
-                case SDL_KEYDOWN:
+                /*case SDL_KEYDOWN:
                     printf("eeee");
-                break;
+                break;*/
                 case SDL_JOYBUTTONDOWN:
-                    controller[event.jbutton.button] = 1;
-                    //printf("button pressed: %d\n", event.jbutton.button);
-                    for (int i = 0; i <= BUTTONNUM; i++)
-                    {
-                        printf("%d", controller[i]);
-                    }
-                    printf("\n");
+                    controller[event.jbutton.button+4] = 1;
                 break;
                 case SDL_JOYBUTTONUP:
-                    controller[event.jbutton.button] = 0;
-                    //printf("button released: %d\n", event.jbutton.button);
-                    for (int i = 0; i <= BUTTONNUM; i++)
+                    controller[event.jbutton.button+4] = 0;
+                break;
+                case SDL_JOYHATMOTION:
+                    for (int i = 0; i < 4; i++)
                     {
-                        printf("%d", controller[i]);
+                        int b = 1 << i;
+                        int value = event.jhat.value & b;
+                        controller[i] = value;
                     }
-                    printf("\n");
                 break;
             }
+            /*for (int i = 0; i <= BUTTONNUM; i++)
+            {
+                printf("%d", controller[i]);
+            }
+            printf("\n");*/
         }
     }
-
 };
