@@ -1,31 +1,19 @@
 #include <GL/gl.h>
 #include "texture.h"
 #include <stb_image.h>
+#include <entity.h>
 
-class Entity
-{
-    private:
-    int x;
-    int y;
-    int width;
-    int height;
-    int xOrigin;
-    int yOrigin;
-
-    Texture tex;
-
-    public:
-    void init(int xx, int yy)
+    void Entity::init(int xx, int yy)
     {
 
     }
 
-    void update(bool *controller)
+    void Entity::update(bool *controller)
     {
 
     }
 
-    void draw()
+    void Entity::draw()
     {
         tex.bind();
         glBegin(GL_QUADS);
@@ -48,47 +36,45 @@ class Entity
 
     }
 
-    void setTexture(char const* name, int width, int height)
+    void Entity::setTexture(char const* name, int width, int height)
     {
         tex.init(name, width, height);
     }
 
-    void setXY(int xx, int yy)
+    void Entity::setXY(int xx, int yy)
     {
         x = xx;
         y = yy;
     }
 
-    int getX()
+    int Entity::getX()
     {
         return x;
     }
 
-    int getY()
+    int Entity::getY()
     {
         return y;
     }
 
-    void setWidthHeight(int w, int h)
+    void Entity::setWidthHeight(int w, int h)
     {
         width = w;
         height = h;
     }
 
-    int getWidth()
+    int Entity::getWidth()
     {
         return width;
     }
 
-    int getHeight()
+    int Entity::getHeight()
     {
         return height;
     }
 
-    void setOrigin(int xx, int yy)
+    void Entity::setOrigin(int xx, int yy)
     {
         xOrigin = xx;
         yOrigin = yy;
     }
-
-};

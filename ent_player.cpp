@@ -1,4 +1,4 @@
-#include "entity.cpp"
+#include "entity.h"
 #include "texture.h"
 
 class EntPlayer: public Entity

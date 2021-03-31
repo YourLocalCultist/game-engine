@@ -7,7 +7,7 @@
 
 1617084851 source:/home/nathan/dev/GameEngine/game.c
 
-1617107099 source:/home/nathan/dev/GameEngine/main.cpp
+1617160422 source:/home/nathan/dev/GameEngine/main.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/glut.h>
@@ -91,15 +91,20 @@
 	<stb_image.h>
 	<texture.h>
 
-1617160384 source:/home/nathan/dev/GameEngine/ent_player.cpp
-	"entity.cpp"
+1617160900 source:/home/nathan/dev/GameEngine/ent_player.cpp
+	"entity.h"
 	"texture.h"
 
 1617157470 /home/nathan/dev/GameEngine//texture.h
 	<GL/gl.h>
 	<stb_image.h>
 
-1617160384 /home/nathan/dev/GameEngine/ent_player.cpp
-	"entity.cpp"
+1617160900 /home/nathan/dev/GameEngine/ent_player.cpp
+	"entity.h"
 	"texture.h"
+
+1617160936 /home/nathan/dev/GameEngine/entity.h
+	<GL/gl.h>
+	"texture.h"
+	<stb_image.h>
 
