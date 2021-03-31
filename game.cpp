@@ -3,7 +3,7 @@
 #include <time.h>       /* time */
 #include <GL/gl.h>
 #include <SDL2/SDL.h>
-#include "entity.cpp"
+#include "ent_player.cpp"
 
 class Game
 {
@@ -14,7 +14,7 @@ class Game
     #define BUTTONNUM 20
     bool controller[BUTTONNUM];
 
-    Entity player;
+    EntPlayer player;
 
     public:
 
@@ -28,7 +28,9 @@ class Game
     {
         controllerUpdate();
 
-        player.update(controller);
+        bool *ctrlPointer;
+        ctrlPointer = controller;
+        player.update(ctrlPointer);
         player.draw();
 
     }

@@ -47,7 +47,7 @@ void gameLoop() //Main game loop
 
 void reshape(int w, int h)//Resize window handler
 {
-    float height = 270;
+    float height = 100;
     float width = w*(height/h);
 
     glViewport(0,0,w,h);
