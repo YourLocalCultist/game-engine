@@ -3,7 +3,7 @@
 #include <stb_image.h>
 #include <entity.h>
 
-    void Entity::init(int xx, int yy)
+    void Entity::init(int x, int y)
     {
 
     }
@@ -17,21 +17,20 @@
     {
         tex.bind();
         glBegin(GL_QUADS);
-        glVertex2i(x+width-xOrigin,y+height-yOrigin);
+        glVertex2i(dem.x+dem.w,dem.y+dem.h);
         glTexCoord2i(0, 0);
-        glVertex2i(x-xOrigin,y+height-yOrigin);
+        glVertex2i(dem.x,dem.y+dem.h);
         glTexCoord2i(0, 1);
-        glVertex2i(x-xOrigin,y-yOrigin);
+        glVertex2i(dem.x,dem.y);
         glTexCoord2i(1, 1);
-        glVertex2i(x+width-xOrigin,y-yOrigin);
+        glVertex2i(dem.x+dem.w,dem.y);
         glTexCoord2i(1, 0);
         glEnd();
         tex.unbind();
 
         glPointSize(5);
         glBegin(GL_POINTS);
-        glVertex2i(xOrigin+x,yOrigin+y);
-        glVertex2i(x,y);
+        glVertex2i(dem.x,dem.y);
         glEnd();
 
     }
@@ -41,40 +40,54 @@
         tex.init(name, width, height);
     }
 
-    void Entity::setXY(int xx, int yy)
+    void Entity::setXY(int x, int y)
     {
-        x = xx;
-        y = yy;
+        dem.x = x;
+        dem.y = y;
     }
 
     int Entity::getX()
     {
-        return x;
+        return dem.x;
     }
 
     int Entity::getY()
     {
-        return y;
+        return dem.y;
     }
 
     void Entity::setWidthHeight(int w, int h)
     {
-        width = w;
-        height = h;
+        dem.w = w;
+        dem.h = h;
     }
 
     int Entity::getWidth()
     {
-        return width;
+        return dem.w;
     }
 
     int Entity::getHeight()
     {
-        return height;
+        return dem.h;
     }
 
-    void Entity::setOrigin(int xx, int yy)
+    bool Entity::testCollision(Demension oDem)
     {
-        xOrigin = xx;
-        yOrigin = yy;
+        int myXCentre = dem.w/2;
+        int myYCentre = dem.h/2;
+        int myXOrigin = dem.x+myXCentre;
+        int myYOrigin = dem.y+myYCentre;
+
+        int oXCentre = oDem.w/2;
+        int oYCentre = oDem.h/2;
+        int oXOrigin = oDem.x+oXCentre;
+        int oYOrigin = oDem.y+oYCentre;
+
+        if (abs(myXOrigin - oXOrigin) > myXCentre) return false;
+        if (abs(myXOrigin - oXOrigin) > oXCentre) return false;
+        if (abs(myYOrigin - oYOrigin) > myYCentre) return false;
+        if (abs(myYOrigin - oYOrigin) > oYCentre) return false;
+
+        return true;
     }

@@ -1,22 +1,29 @@
 #include <GL/gl.h>
 #include "texture.h"
 #include <stb_image.h>
+#include <iostream>
+#include <vector>
+#include <memory>
 #pragma once
+
+struct Demension
+{
+    int x;
+    int y;
+    int w;
+    int h;
+};
+
 
 class Entity
 {
     private:
-    int x;
-    int y;
-    int width;
-    int height;
-    int xOrigin;
-    int yOrigin;
+    Demension dem;
     Texture tex;
 
     public:
-    void init(int xx, int yy);
-    void update(bool *controller);
+    virtual void init(int x, int y);
+    virtual void update(bool *controller);
     void draw();
     void setTexture(char const* name, int width, int height);
     void setXY(int xx, int yy);
@@ -25,6 +32,6 @@ class Entity
     void setWidthHeight(int w, int h);
     int getWidth();
     int getHeight();
-    void setOrigin(int xx, int yy);
+    bool testCollision(Demension);
 
 };

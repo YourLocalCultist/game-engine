@@ -4,6 +4,11 @@
 #include <GL/gl.h>
 #include <SDL2/SDL.h>
 #include "ent_player.cpp"
+#include "ent_wall.cpp"
+#include "entity.h"
+#include <iostream>
+#include <vector>
+#include <memory>
 
 class Game
 {
@@ -14,14 +19,18 @@ class Game
     #define BUTTONNUM 20
     bool controller[BUTTONNUM];
 
-    EntPlayer player;
+    std::vector<std::unique_ptr<Entity> > entList;
 
     public:
 
     void init()
     {
         controllerInit();
-        player.init(32,32);
+        entList.push_back( std::unique_ptr<Entity>(new EntPlayer()));
+        entList.at(0)->init(32,32);
+        entList.push_back( std::unique_ptr<Entity>(new EntWall()));
+        entList.at(1)->init(64,64);
+
     }
 
     void update()
@@ -30,8 +39,16 @@ class Game
 
         bool *ctrlPointer;
         ctrlPointer = controller;
-        player.update(ctrlPointer);
-        player.draw();
+
+        for (unsigned int i = 0; i < entList.size(); i++)
+        {
+            entList.at(i)->update(ctrlPointer);
+        }
+
+        for (unsigned int i = 0; i < entList.size(); i++)
+        {
+            entList.at(i)->draw();
+        }
 
     }
 
@@ -68,9 +85,6 @@ class Game
         {
             switch(event.type)
             {
-                /*case SDL_KEYDOWN:
-                    printf("eeee");
-                break;*/
                 case SDL_JOYBUTTONDOWN:
                     controller[event.jbutton.button+4] = 1;
                 break;
@@ -86,11 +100,6 @@ class Game
                     }
                 break;
             }
-            /*for (int i = 0; i <= BUTTONNUM; i++)
-            {
-                printf("%d", controller[i]);
-            }
-            printf("\n");*/
         }
     }
 };

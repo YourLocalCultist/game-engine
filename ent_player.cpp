@@ -1,16 +1,14 @@
 #include "entity.h"
-#include "texture.h"
 
 class EntPlayer: public Entity
 {
     private:
 
     public:
-    void init(int xx, int yy)
+    void init(int x, int y)
     {
-        setXY(xx,yy);
+        setXY(x,y);
         setWidthHeight(8, 8);
-        setOrigin(4, 0);
         setTexture("textures/bearsmall.png", 64, 64);
     }
 
